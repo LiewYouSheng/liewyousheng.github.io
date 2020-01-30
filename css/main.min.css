@@ -489,7 +489,7 @@ to{opacity:0;visibility:hidden;-webkit-transform:translate3d(0, -100%, 0);transf
 }
 @media screen and (max-width:360px){.hero-content h1{font-size:3.8rem;}
 }
-.s-about{padding-bottom:16rem;background-color:#ffffff;position:relative;}
+.s-about{padding-bottom:0rem;background-color:#ffffff;position:relative;}
 .s-about .right-vert-line{background-color:#302c59;}
 .s-about__section--profile{padding-top:28rem;padding-bottom:4rem;min-height:108rem;position:relative;}
 .s-about__section--profile::before{content:"";display:block;background-color:#b3c2c1;position:absolute;top:0;bottom:0;right:0;left:calc(50% + 12vw);}
