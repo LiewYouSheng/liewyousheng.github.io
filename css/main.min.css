@@ -322,7 +322,7 @@ input::-moz-focus-inner{border:0;padding:0;}
 .wide{max-width:1400px;}
 .wider{max-width:1600px;}
 .narrow{max-width:1000px;}
-.subhead{font-size:3rem;line-height:1.286;text-transform:uppercase;letter-spacing:.4em;margin-top:0;margin-bottom:6rem;color:#f9861a;}
+.subhead{font-size:3rem;line-height:1.286;text-transform:uppercase;letter-spacing:.2em;margin-top:0;margin-bottom:6rem;color:#f9861a;}
 .display-1{font-size:4.8rem;line-height:1.333;}
 .section-intro{position:relative;margin-bottom:12rem;}
 .section-intro .display-1{margin-top:0;}
@@ -414,7 +414,7 @@ input::-moz-focus-inner{border:0;padding:0;}
 .s-hero{width:100%;height:100vh;min-height:82rem;overflow:hidden;background-color:transparent;position:relative;}
 .s-hero::before{display:block;content:"";position:absolute;top:0;left:0;width:100%;height:100%;opacity:.8;background-color:#000000;}
 .s-hero .shadow-overlay{position:absolute;top:0;left:0;width:100%;height:100%;opacity:.3;background:linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);}
-.hero-content{height:100%;max-width:1400px;-ms-flex-align:end;-webkit-box-align:end;align-items:flex-end;padding-top:20vh;padding-bottom:14vh;position:relative;}
+.hero-content{height:100%;max-width:1400px;-ms-flex-align:end;-webkit-box-align:end;align-items:flex-end;padding-top:5vh;padding-bottom:30vh;position:relative;}
 .hero-content h1{font-size:7rem;font-weight:400;line-height:1.257;padding-right:3.2rem;margin-top:0;color:#ffffff;position:relative;}
 .hero-content h1::before{content:"";display:block;height:2px;width:8rem;background-color:#f9861a;position:absolute;left:-10.8rem;top:.55em;}
 .hero-social{list-style:none;display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-flow:row wrap;font-family:"Gothic A1", sans-serif;font-size:1.2rem;font-weight:700;line-height:3.2rem;text-transform:uppercase;letter-spacing:.5em;margin-top:8rem;margin-left:.4rem;margin-bottom:0;position:relative;}
