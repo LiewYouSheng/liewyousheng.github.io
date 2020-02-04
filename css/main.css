@@ -1833,7 +1833,7 @@ html.no-csstransitions .hero-content {
 }
 @media screen and (max-width: 800px) {
   .hero-content h1 {
-    font-size: 4rem;
+    font-size: 3.8rem;
   }
   .hero-social {
     padding-right: 7.2rem;
