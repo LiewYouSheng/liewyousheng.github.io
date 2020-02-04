@@ -23,18 +23,18 @@
     <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="css/base.min.css">
-    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/vendor.min.css">
     
     <!-- Fonts
     ================================================== -->
-    <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Lato" rel="stylesheet">
 
 
 
     <!-- script
     ================================================== -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" async=""></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" async=""></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -89,10 +89,11 @@
                 <ul class="header-nav">
                     <li><a class="smoothscroll" href="#home" title="Intro">Home</a></li>
                     <li><a class="smoothscroll" href="#about" title="About">About</a></li>
+                    <li><a class="smoothscroll" href="#portfolio" title="Portfolio">Portfolio</a></li>
                     <li><a class="smoothscroll" href="#competitions" title="Competitions">Competitions</a></li>
                     <li><a class="smoothscroll" href="#expertise" title="Services">Expertise</a></li>
                     
-                    <li><a class="smoothscroll" href="#footer" title="Contact">Say Hi</a></li>
+                    <li><a class="smoothscroll" href="#footer" title="Contact">Contact</a></li>
                 </ul>
             </nav> <!-- end header-nav-wrap -->
 
@@ -140,15 +141,15 @@
             <div class="row">
                 <div class="column large-6 medium-8 tab-full">
 
-                    <div class="section-intro" data-aos="fade-up">
+                    <div class="section-intro" data-aos="fade-up" data-aos-duration="200">
                         <h3 class="subhead">About Me</h3>
                     </div>
 
-                    <p data-aos="fade-up">
-                    I'm a Python Developer, focusing on Data Science & Business Analytics. I collect and make meaningful insights from large sets of business data to improve P&L.
+                    <p data-aos="fade-up" data-aos-duration="300">
+                    I'm a Python Developer, focusing on Data Science & AI. I collect and make meaningful insights from large sets of business data to improve P&L.
                     <br>
                     <br>
-                    I'm currently studying at Nanyang Technological University as a Double Degree, Computer Science & Business Student. I'm graduating in 2023 and currently seeking a Summer Internship in 2020.
+                    I'm currently studying at Nanyang Technological University as a Double Degree, Computer Science & Business Student.
                     </p>
 
                 </div>
@@ -156,10 +157,74 @@
 
         </div> <!-- end s-about__section--profile -->
     </section> <!-- end s-about -->
+
+    <!-- portfolio
+    ================================================== -->
+    <section id="portfolio" class="s-portfolio target-section">
+
+        <div class="row s-portfolio__header">
+            <div class="column large-6 medium-8 tab-full">
+                <div class="section-intro" data-aos="fade-up" data-aos-duration="200">
+                    <h3 class="subhead">Portfolio</h3>
+                    <h1 class="display-1">
+                        Some of my projects I've been working on recently.
+                    </h1>
+                </div>
+            </div>
+        </div> <!-- s-porfolio__header -->
+
+        <div class="row s-porfolio__list block-large-1-2 block-tab-full collapse">
+
+            <div class="column" data-aos="fade-up" data-aos-duration="200">
+                <div class="folio-item">
+                    <div class="folio-item__thumb">
+                        <a class="folio-item__thumb-link" href="images/portfolio/data-studio@2x.jpg" title="Data Studio" data-size="1050x700">
+                            <img src="images/portfolio/data-studio.jpg" 
+                                 srcset="images/portfolio/data-studio.jpg 1x, images/portfolio/data-studio@2x.jpg 2x" alt="">
+                        </a>
+                    </div>
+                    <div class="folio-item__info">
+                        <div class="folio-item__cat">Business Analytics</div>
+                        <h4 class="folio-item__title">Google - Data Studio Dashboard</h4>
+                    </div>
+                    <a href="https://datastudio.google.com/reporting/676fc810-d528-42cc-ae2c-9dd42db29d9a" title="Project Link" class="folio-item__project-link">Project Link</a>
+                    <div class="folio-item__caption">
+                        
+                        <p>An interactive analytics dashboard custom-built using Google Data Studio for analysing data from IoT sensors and other data sources.</p>
+                        <a href="https://datastudio.google.com/reporting/676fc810-d528-42cc-ae2c-9dd42db29d9a" title="Project Link" class="folio-open-project-link">Project Link</a>
+                    </div>
+                </div>
+            </div> <!-- end column -->
+            <div class="column" data-aos="fade-up" data-aos-duration="200">
+                <div class="folio-item">
+                    <div class="folio-item__thumb">
+                        <a class="folio-item__thumb-link" href="images/portfolio/forex-hiplot@2x.jpg" title="Forex Hiplot" data-size="1050x700">
+                            <img src="images/portfolio/forex-hiplot.jpg" 
+                                 srcset="images/portfolio/forex-hiplot.jpg 1x, images/portfolio/forex-hiplot@2x.jpg 2x" alt="">
+                        </a>
+                    </div>
+                    <div class="folio-item__info">
+                        <div class="folio-item__cat">Data Analytics / Quantitative Finance</div>
+                        <h4 class="folio-item__title">Facebook AI - HiPlot Analysis</h4>
+                    </div>
+                    <a href="https://liewyousheng.github.io/forex_facebook_hiplot/" title="Project Link" class="folio-item__project-link">Project Link</a>
+                    <div class="folio-item__caption">
+                        <p>An interactive analysis of Forex backtesting results using Python and Facebook AI Research's HiPlot Library, to model quantitative finance strategies in the forex market.
+
+                        </p>
+                        <a href="https://liewyousheng.github.io/forex_facebook_hiplot/" title="Project Link" class="folio-open-project-link">Project Link</a>
+                    </div>
+                </div>
+            </div> <!-- end column -->
+
+        </div> <!-- folio-list -->
+
+    </section> <!-- end portfolio -->
+
     <!-- competitions
     ================================================== -->
     <section id="competitions" class=" s-comps target-section">
-        <div class="s-portfolio">
+        <div class="s-competition">
             <div class="vert-line"></div>
             <div class="row">
                 <div class="section-intro">
@@ -169,7 +234,7 @@
 
             <div class="row block-large-1-2 block-900-full work-positions">
 
-                <div class="column" data-aos="fade-up">
+                <div class="column" data-aos="fade-up" data-aos-duration="200">
                     <div class="position">
                         <div class="position__header">
                             <h6>
@@ -186,7 +251,7 @@
                         </p>
                     </div>
                 </div> <!-- end column -->
-                <div class="column" data-aos="fade-up">
+                <div class="column" data-aos="fade-up" data-aos-duration="200">
                     <div class="position">
                         <div class="position__header">
                             <h6>
@@ -203,7 +268,7 @@
                         </p>
                     </div>
                 </div> <!-- end column -->
-                <div class="column" data-aos="fade-up">
+                <div class="column" data-aos="fade-up" data-aos-duration="200">
                     <div class="position">
                         <div class="position__header">
                             <h6>
@@ -220,7 +285,7 @@
                         </p>
                     </div>
                 </div> <!-- end column -->
-                <div class="column" data-aos="fade-up">
+                <div class="column" data-aos="fade-up" data-aos-duration="200">
                     <div class="position">
                         <div class="position__header">
                             <h6>
@@ -238,7 +303,7 @@
                         </p>
                     </div>
                 </div> <!-- end column -->
-                <div class="column" data-aos="fade-up">
+                <div class="column" data-aos="fade-up" data-aos-duration="200">
                     <div class="position">
                         <div class="position__header">
                             <h6>
@@ -281,14 +346,14 @@
                     </h1>
                 </div>
 
-                <p class="lead" data-aos="fade-up">
+                <p class="lead" data-aos="fade-up" data-aos-duration="200">
                 Self-taught programming while concurrently studying two degrees - Computer Science & Business. <br> 
                 <br>I can generate valuable insights for your businesses when handling large amounts of data.
                 </p>
             </div> <!-- end  s-services--leftcol -->
 
             <div class="column large-6">
-                <ul class="services-list" data-aos="fade-up">
+                <ul class="services-list" data-aos="fade-up" data-aos-duration="200">
                     <li class="services-list__item is-active">
                         <div class="services-list__item-header">
                             <h5>VBA - Excel Macros</h5>

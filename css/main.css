@@ -1,3 +1,4 @@
+
 @media screen and (max-width: 1000px) {
   .block-1000-full > .column {
     -ms-flex: 0 0 100%;
@@ -1133,7 +1134,7 @@ input::-moz-focus-inner {
 }
 .section-intro {
   position: relative;
-  margin-bottom: 12rem;
+  margin-bottom: 0rem;
 }
 .section-intro .display-1 {
   margin-top: 0;
@@ -1212,7 +1213,7 @@ input::-moz-focus-inner {
 }
 @media screen and (max-width: 400px) {
   .section-intro {
-    margin-bottom: 9.6rem;
+    margin-bottom: 0rem;
   }
   .section-intro::before {
     font-size: 20rem;
@@ -1692,14 +1693,7 @@ html.ss-preload .hero-content {
   opacity: 0;
 }
 html.ss-loaded .hero-content {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+  opacity: 1;
 }
 html.no-csstransitions .hero-content {
   opacity: 1;
@@ -1883,7 +1877,7 @@ html.no-csstransitions .hero-content {
   }
 }
 .s-about {
-  padding-bottom: 16rem;
+  padding-bottom: 0rem;
   background-color: #ffffff;
   position: relative;
 }
@@ -1891,15 +1885,14 @@ html.no-csstransitions .hero-content {
   background-color: #302c59;
 }
 .s-about__section--profile {
-  padding-top: 28rem;
+  padding-top: 6rem;
   padding-bottom: 4rem;
-  min-height: 108rem;
   position: relative;
 }
 .s-about__section--profile::before {
   content: "";
   display: block;
-  background-color: #b3c2c1;
+  background-color: #ffffff;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1987,7 +1980,7 @@ html.no-csstransitions .hero-content {
 }
 @media screen and (max-width: 800px) {
   .s-about__section--profile {
-    padding-top: 20rem;
+    padding-top: 6rem;
     padding-bottom: 0;
     min-height: 0;
   }
@@ -2010,7 +2003,7 @@ html.no-csstransitions .hero-content {
   }
 }
 .s-services {
-  padding-top: 24rem;
+  padding-top: 6rem;
   padding-bottom: 20rem;
   background-color: #1d1b37;
   position: relative;
@@ -2142,7 +2135,7 @@ html.no-csstransitions .hero-content {
 }
 @media screen and (max-width: 800px) {
   .s-services {
-    padding-top: 20rem;
+    padding-top: 6rem;
   }
   .s-services__content .s-services__leftcol {
     -ms-flex: 0 0 100%;
@@ -2172,16 +2165,36 @@ html.no-csstransitions .hero-content {
     font-size: 2.8rem;
   }
 }
-.s-portfolio {
-  padding-top: 24rem;
+.s-competition {
+  padding-top: 6rem;
   padding-bottom: 0;
-  background-color: #ffffff;
+  background-color: #eeeeee;
+  position: relative;
+}
+.s-competition::before {
+  content: "";
+  display: block;
+  background-color: #eeeeee;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+}
+.s-competition__list {
+  max-width: 1240px;
+}
+
+.s-portfolio {
+  padding-top: 6rem;
+  padding-bottom: 0;
+  background-color: #f0f0f0;
   position: relative;
 }
 .s-portfolio::before {
   content: "";
   display: block;
-  background-color: #b3c2c1;
+  background-color: #bbdefb;
   position: absolute;
   top: 0;
   right: 0;
@@ -2191,6 +2204,8 @@ html.no-csstransitions .hero-content {
 .s-portfolio__list {
   max-width: 1240px;
 }
+
+
 .folio-item {
   position: relative;
   overflow: hidden;
@@ -2289,6 +2304,21 @@ html.no-csstransitions .hero-content {
   bottom: 3.9rem;
   left: 3rem;
 }
+
+.folio-open-project-link {
+  z-index: 2;
+  display: block;
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  
+}
+
+
 .folio-item__project-link::before {
   display: block;
   content: "";
@@ -2343,7 +2373,7 @@ html.no-csstransitions .hero-content {
 }
 @media screen and (max-width: 800px) {
   .s-portfolio {
-    padding-top: 20rem;
+    padding-top: 6rem;
   }
   .folio-item__thumb a::after {
     font-size: 3rem;
