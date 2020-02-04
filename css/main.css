@@ -1780,7 +1780,7 @@ html.no-csstransitions .hero-content {
 }
 @media screen and (max-width: 1800px) {
   .hero-content h1 {
-    font-size: 6.3rem;
+    font-size: 5rem;
   }
   .hero-content h1::before {
     width: 6rem;
@@ -1802,7 +1802,7 @@ html.no-csstransitions .hero-content {
     max-width: 1200px;
   }
   .hero-content h1 {
-    font-size: 6rem;
+    font-size: 4rem;
     padding-top: 3.2rem;
   }
   .hero-content h1::before {
@@ -1825,7 +1825,7 @@ html.no-csstransitions .hero-content {
 }
 @media screen and (max-width: 1000px) {
   .hero-content h1 {
-    font-size: 5.6rem;
+    font-size: 4rem;
   }
   .hero-social {
     font-size: 1.1rem;
@@ -1833,7 +1833,7 @@ html.no-csstransitions .hero-content {
 }
 @media screen and (max-width: 800px) {
   .hero-content h1 {
-    font-size: 4.8rem;
+    font-size: 4rem;
   }
   .hero-social {
     padding-right: 7.2rem;
@@ -1848,7 +1848,7 @@ html.no-csstransitions .hero-content {
 }
 @media screen and (max-width: 600px) {
   .hero-content h1 {
-    font-size: 4.6rem;
+    font-size: 3rem;
   }
   .hero-content h1 br {
     display: none;
@@ -1862,18 +1862,18 @@ html.no-csstransitions .hero-content {
 }
 @media screen and (max-width: 500px) {
   .hero-content h1 {
-    font-size: 4.4rem;
+    font-size: 3rem;
     padding-right: 0;
   }
 }
 @media screen and (max-width: 400px) {
   .hero-content h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 @media screen and (max-width: 360px) {
   .hero-content h1 {
-    font-size: 3.8rem;
+    font-size: 3rem;
   }
 }
 .s-about {
