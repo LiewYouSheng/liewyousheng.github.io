@@ -2171,16 +2171,6 @@ html.no-csstransitions .hero-content {
   background-color: #eeeeee;
   position: relative;
 }
-.s-competition::before {
-  content: "";
-  display: block;
-  background-color: #eeeeee;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 50%;
-}
 .s-competition__list {
   max-width: 1240px;
 }
