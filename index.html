@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NMR6HCX');</script>
-    <!-- End Google Tag Manager -->
 
     <!--- basic page needs
     ================================================== -->
@@ -15,7 +9,7 @@
     <title>You Sheng</title>
     <meta name="description" content="You Sheng - Python Developer">
     <meta name="author" content="You Sheng">
-    <meta name="theme-color" content="#757575"/>
+    <meta name="theme-color" content="#757575" />
     <!-- mobile specific metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +19,7 @@
     <link rel="stylesheet" href="css/base.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/vendor.min.css">
-    
+
     <!-- Fonts
     ================================================== -->
     <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Lato" rel="stylesheet">
@@ -36,8 +30,8 @@
     ================================================== -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" async=""></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155169673-1"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -45,7 +39,50 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-155169673-1');
+    </script> -->
+    <script>
+        // fingerprintjs
+        function onFingerprintJSLoad(fpAgent) {
+            // The FingerprintJS agent is ready. Get a visitor identifier when you'd like to.
+            fpAgent.get().then(result => {
+                // This is the visitor identifier:
+                const visitorId = result;
+                // console.log(visitorId);
+                // console.log("here")
+                // type_saved.value = type;
+                postGASData('https://script.google.com/macros/s/AKfycbyyzzuAm8cC5-B0qHPt0SfgM0mHJ9L95E755QGMazwd2sUmkAEk/exec', {
+                    "m": visitorId["components"],
+                    "uuid": visitorId["visitorId"],
+                    "url": window.location.href
+                })
+                // console.log("here")
+            });
+        }
+        // Example POST method implementation:
+
+        async function postGASData(url = '', data = {}) {
+            // Default options are marked with *
+            const response = await fetch(url, {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                mode: 'no-cors', // no-cors, *cors, same-origin
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'same-origin', // include, *same-origin, omit
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                redirect: 'follow', // manual, *follow, error
+                referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+                body: JSON.stringify(data) // body data type must match "Content-Type" header
+            });
+            // No cors, opaque response
+            console.log("Pinged");
+            // return response.json(); // parses JSON response into native JavaScript objects
+        }
     </script>
+    <script async src="fancy.js"
+        onload="FingerprintJS.load().then(onFingerprintJSLoad)">
+        </script>
 
     <!-- favicons
     ================================================== -->
@@ -58,8 +95,8 @@
 
 <body id="top">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMR6HCX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMR6HCX" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- preloader
@@ -84,7 +121,7 @@
         </div>
 
         <div class="header-content">
-    
+
             <nav class="row header-nav-wrap">
                 <ul class="header-nav">
                     <li><a class="smoothscroll" href="#home" title="Intro">Home</a></li>
@@ -92,39 +129,42 @@
                     <li><a class="smoothscroll" href="#portfolio" title="Portfolio">Portfolio</a></li>
                     <li><a class="smoothscroll" href="#competitions" title="Competitions">Competitions</a></li>
                     <li><a class="smoothscroll" href="#expertise" title="Services">Expertise</a></li>
-                    
+
                     <li><a class="smoothscroll" href="#footer" title="Contact">Contact</a></li>
                 </ul>
             </nav> <!-- end header-nav-wrap -->
 
-            <a id="cvbar" href="LiewYouSheng Resume.pdf" class="btn btn--stroke btn--small" target="_blank">Download CV</a>
+            <a id="cvbar" href="LiewYouSheng Resume.pdf" class="btn btn--stroke btn--small" target="_blank">Download
+                CV</a>
 
         </div> <!-- end header-content -->
 
         <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
 
-    </header> 
+    </header>
 
 
     <!-- hero
     ================================================== -->
-    <section id="home" class="s-hero target-section" data-parallax="scroll" data-image-src="images/hero-bg-3000.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center alt="">
-        
+    <section id="home" class="s-hero target-section" data-parallax="scroll" data-image-src="images/hero-bg-3000.jpg"
+        data-natural-width=3000 data-natural-height=2000 data-position-y=center alt="">
+
         <div class="shadow-overlay"></div>
 
         <div class="row hero-content">
 
             <div class="column large-8 medium-10">
                 <h1>
-                Hello, I'm You Sheng.<br>
-                A software developer studying
-                Computer Science & Business
-                <br>
-                in Singapore.
+                    Hello, I'm You Sheng.<br>
+                    A software developer studying
+                    Computer Science & Business
+                    <br>
+                    in Singapore.
                 </h1>
 
-                <a id="cv" href="LiewYouSheng Resume.pdf" class="btn btn--primary btn--stroke" target="_blank">Download CV</a>
-            </div> 
+                <a id="cv" href="LiewYouSheng Resume.pdf" class="btn btn--primary btn--stroke" target="_blank">Download
+                    CV</a>
+            </div>
 
         </div> <!-- end hero-content -->
 
@@ -146,10 +186,12 @@
                     </div>
 
                     <p data-aos="fade-up" data-aos-duration="300">
-                    I'm a programmer focusing on Data Science & AI. I collect and make meaningful insights from large sets of data.
-                    <br>
-                    <br>
-                    I'm currently studying at Nanyang Technological University as a Double Degree, Computer Science & Business Student.
+                        I'm a programmer focusing on Data Science & AI. I collect and make meaningful insights from
+                        large sets of data.
+                        <br>
+                        <br>
+                        I'm currently studying at Nanyang Technological University as a Double Degree, Computer Science
+                        & Business Student.
                     </p>
 
                 </div>
@@ -178,41 +220,51 @@
             <div class="column" data-aos="fade-up" data-aos-duration="200">
                 <div class="folio-item">
                     <div class="folio-item__thumb">
-                        <a class="folio-item__thumb-link" href="images/portfolio/data-studio@2x.jpg" title="Data Studio" data-size="1050x700">
-                            <img src="images/portfolio/data-studio.jpg" 
-                                 srcset="images/portfolio/data-studio.jpg 1x, images/portfolio/data-studio@2x.jpg 2x" alt="">
+                        <a class="folio-item__thumb-link" href="images/portfolio/data-studio@2x.jpg" title="Data Studio"
+                            data-size="1050x700">
+                            <img src="images/portfolio/data-studio.jpg"
+                                srcset="images/portfolio/data-studio.jpg 1x, images/portfolio/data-studio@2x.jpg 2x"
+                                alt="">
                         </a>
                     </div>
                     <div class="folio-item__info">
                         <div class="folio-item__cat">Business Analytics</div>
                         <h4 class="folio-item__title">Google - Data Studio Dashboard</h4>
                     </div>
-                    <a href="https://datastudio.google.com/reporting/676fc810-d528-42cc-ae2c-9dd42db29d9a" title="Project Link" class="folio-item__project-link">Project Link</a>
+                    <a href="https://datastudio.google.com/reporting/676fc810-d528-42cc-ae2c-9dd42db29d9a"
+                        title="Project Link" class="folio-item__project-link">Project Link</a>
                     <div class="folio-item__caption">
-                        
-                        <p>An interactive analytics dashboard custom-built using Google Data Studio for analysing data from IoT sensors and other data sources.</p>
-                        <a href="https://datastudio.google.com/reporting/676fc810-d528-42cc-ae2c-9dd42db29d9a" title="Project Link" class="folio-open-project-link">Project Link</a>
+
+                        <p>An interactive analytics dashboard custom-built using Google Data Studio for analysing data
+                            from IoT sensors and other data sources.</p>
+                        <a href="https://datastudio.google.com/reporting/676fc810-d528-42cc-ae2c-9dd42db29d9a"
+                            title="Project Link" class="folio-open-project-link">Project Link</a>
                     </div>
                 </div>
             </div> <!-- end column -->
             <div class="column" data-aos="fade-up" data-aos-duration="200">
                 <div class="folio-item">
                     <div class="folio-item__thumb">
-                        <a class="folio-item__thumb-link" href="images/portfolio/forex-hiplot@2x.jpg" title="Forex Hiplot" data-size="1050x700">
-                            <img src="images/portfolio/forex-hiplot.jpg" 
-                                 srcset="images/portfolio/forex-hiplot.jpg 1x, images/portfolio/forex-hiplot@2x.jpg 2x" alt="">
+                        <a class="folio-item__thumb-link" href="images/portfolio/forex-hiplot@2x.jpg"
+                            title="Forex Hiplot" data-size="1050x700">
+                            <img src="images/portfolio/forex-hiplot.jpg"
+                                srcset="images/portfolio/forex-hiplot.jpg 1x, images/portfolio/forex-hiplot@2x.jpg 2x"
+                                alt="">
                         </a>
                     </div>
                     <div class="folio-item__info">
                         <div class="folio-item__cat">Data Analytics / Quantitative Finance</div>
                         <h4 class="folio-item__title">Facebook AI - HiPlot Analysis</h4>
                     </div>
-                    <a href="https://liewyousheng.github.io/forex_facebook_hiplot/" title="Project Link" class="folio-item__project-link">Project Link</a>
+                    <a href="https://liewyousheng.github.io/forex_facebook_hiplot/" title="Project Link"
+                        class="folio-item__project-link">Project Link</a>
                     <div class="folio-item__caption">
-                        <p>An interactive analysis of Forex backtesting results using Python and Facebook AI Research's HiPlot Library, to model quantitative finance strategies in the forex market.
+                        <p>An interactive analysis of Forex backtesting results using Python and Facebook AI Research's
+                            HiPlot Library, to model quantitative finance strategies in the forex market.
 
                         </p>
-                        <a href="https://liewyousheng.github.io/forex_facebook_hiplot/" title="Project Link" class="folio-open-project-link">Project Link</a>
+                        <a href="https://liewyousheng.github.io/forex_facebook_hiplot/" title="Project Link"
+                            class="folio-open-project-link">Project Link</a>
                     </div>
                 </div>
             </div> <!-- end column -->
@@ -247,7 +299,8 @@
                         </div>
 
                         <p>
-                            1st Place - Innovation & Presentation Round - Showcased a product idea for aiding the blind to efficiently navigate busy streets.
+                            1st Place - Innovation & Presentation Round - Showcased a product idea for aiding the blind
+                            to efficiently navigate busy streets.
                         </p>
                     </div>
                 </div> <!-- end column -->
@@ -264,7 +317,7 @@
                         </div>
 
                         <p>
-                        1st Place - Overall - Created a winning Poker algorithm using Python 
+                            1st Place - Overall - Created a winning Poker algorithm using Python
                         </p>
                     </div>
                 </div> <!-- end column -->
@@ -281,7 +334,8 @@
                         </div>
 
                         <p>
-                        2nd Runner Up - Developed a Mobile Application using Computer Vision and Speech to Text Models (Artificial Intelligence & Machine Learning). 
+                            2nd Runner Up - Developed a Mobile Application using Computer Vision and Speech to Text
+                            Models (Artificial Intelligence & Machine Learning).
                         </p>
                     </div>
                 </div> <!-- end column -->
@@ -298,8 +352,10 @@
                         </div>
 
                         <p>
-                        Participated in Shopee's National Data Science Challenge 2019 on Kaggle, a challenge to build up
-                        an automatic solution to extract product related information from large volume of images and free text data.
+                            Participated in Shopee's National Data Science Challenge 2019 on Kaggle, a challenge to
+                            build up
+                            an automatic solution to extract product related information from large volume of images and
+                            free text data.
                         </p>
                     </div>
                 </div> <!-- end column -->
@@ -316,7 +372,8 @@
                         </div>
 
                         <p>
-                        Participated in UBS's Quant Hackathon 2019. Developed in Python, a fully automated Forex Trading USDJPY Hedging Strategy using Quantitative Finance methods.
+                            Participated in UBS's Quant Hackathon 2019. Developed in Python, a fully automated Forex
+                            Trading USDJPY Hedging Strategy using Quantitative Finance methods.
                         </p>
                     </div>
                 </div> <!-- end column -->
@@ -331,7 +388,7 @@
     <!-- services
     ================================================== -->
     <section id="expertise" class="s-services target-section h-dark-bg">
-        
+
         <div class="row s-services__content">
 
             <div class="vert-line"></div>
@@ -341,14 +398,14 @@
                     <h3 class="subhead">Expertise</h3>
 
                     <h1 class="display-1">
-                    3+ Years of Python Experience <br>
-                    Computer Science & Business Student
+                        3+ Years of Python Experience <br>
+                        Computer Science & Business Student
                     </h1>
                 </div>
 
                 <p class="lead" data-aos="fade-up" data-aos-duration="200">
-                Self-taught programming while concurrently studying two degrees - Computer Science & Business. <br> 
-                <br>I can generate valuable insights for businesses while handling large amounts of data.
+                    Self-taught programming while concurrently studying two degrees - Computer Science & Business. <br>
+                    <br>I can generate valuable insights for businesses while handling large amounts of data.
                 </p>
             </div> <!-- end  s-services--leftcol -->
 
@@ -360,7 +417,8 @@
                         </div>
                         <div class="services-list__item-body">
                             <p>
-                            Using VBA in Excel, I focus on automating workflow processes, making sure nothing gets typed twice.
+                                Using VBA in Excel, I focus on automating workflow processes, making sure nothing gets
+                                typed twice.
                             </p>
                         </div>
                     </li> <!-- services-list__item -->
@@ -370,7 +428,8 @@
                         </div>
                         <div class="services-list__item-body">
                             <p>
-                            Using Selenium with Python, I collect large datasets through live web scraping, automating logins and inputs.
+                                Using Selenium with Python, I collect large datasets through live web scraping,
+                                automating logins and inputs.
                             </p>
                         </div>
                     </li> <!-- services-list__item -->
@@ -380,7 +439,8 @@
                         </div>
                         <div class="services-list__item-body">
                             <p>
-                            Experienced in automating Python Apps & Functions, leveraging on Serverless Cloud Technology like AWS's Lambda to reduce cost.
+                                Experienced in automating Python Apps & Functions, leveraging on Serverless Cloud
+                                Technology like AWS's Lambda to reduce cost.
                             </p>
                         </div>
                     </li> <!-- services-list__item -->
@@ -390,7 +450,8 @@
                         </div>
                         <div class="services-list__item-body">
                             <p>
-                            Handled large datasets using Python, generating valuable insights to improve P/L in the long run.
+                                Handled large datasets using Python, generating valuable insights to improve P/L in the
+                                long run.
                             </p>
                         </div>
                 </ul> <!-- end services-list -->
@@ -402,8 +463,8 @@
 
     <!-- footer
     ================================================== -->
-    <footer id = "footer" class="s-footer h-dark-bg">
-        
+    <footer id="footer" class="s-footer h-dark-bg">
+
         <div class="right-vert-line"></div>
 
         <div class="row s-footer__main">
@@ -411,7 +472,7 @@
                 <div class="section-intro">
                     <h3 class="subhead">Get In Touch</h3>
 
-                    
+
                 </div>
 
                 <div class="footer-email-us">
@@ -435,13 +496,14 @@
 
         <div class="row s-footer__bottom">
             <div class="column large-full ss-copyright">
-                <span>You Sheng - 2020</span> 
+                <span>You Sheng - 2020</span>
                 <span>Design by StyleShout</span>
             </div> <!-- end ss-copyright -->
 
             <div class="ss-go-top">
                 <a class="smoothscroll" title="Back to Top" href="#top">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0l8 9h-6v15h-4v-15h-6z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 0l8 9h-6v15h-4v-15h-6z" /></svg>
                 </a>
             </div> <!-- end ss-go-top -->
         </div> <!-- end s-footer__bottom -->
@@ -464,9 +526,11 @@
 
             <div class="pswp__ui pswp__ui--hidden">
                 <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+                        title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"
+                        title="Share"></button> <button class="pswp__button pswp__button--fs"
+                        title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"
+                        title="Zoom in/out"></button>
                     <div class="pswp__preloader">
                         <div class="pswp__preloader__icn">
                             <div class="pswp__preloader__cut">
@@ -477,8 +541,8 @@
                 </div>
                 <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
                     <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
                 <div class="pswp__caption">
                     <div class="pswp__caption__center"></div>
                 </div>
