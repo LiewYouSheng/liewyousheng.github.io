@@ -1,7 +1,20 @@
-<script src="../fancy.js" onload="FingerprintJS.load().then(onFingerprintJSLoad)">
-    const queryString = window.location.search;
-    console.log(queryString);
-    const urlParams = new URLSearchParams(queryString);
-    console.log(urlParams.get('redirect'));
-    if (urlParams.has('redirect')) { window.location.replace(urlParams.get('redirect')); }
+<!-- If you reached here and managed to find this thats absolutely poggers, do let me know -->
+
+<script src="../fancy.js"></script>
+<script>
+    async function redirectPing() {
+        var result = false;
+        result = await FingerprintJS.load().then(onFingerprintJSLoad);
+        console.log(result)
+        while (!result){
+
+        }
+        const queryString = window.location.search;
+            console.log(queryString);
+            const urlParams = new URLSearchParams(queryString);
+            console.log(urlParams.get('redirect'));
+            if (urlParams.has('redirect')) { window.location.replace(urlParams.get('redirect')); }
+
+    }
+    redirectPing()
 </script>
