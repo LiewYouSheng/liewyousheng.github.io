@@ -18,4 +18,16 @@
 
     }
     redirectPing()
+    async function guaranteeRedirect() {
+        // After 3 seconds
+        await new Promise(r => setTimeout(r, 3000));
+        console.log("GuaranteedRedirect")
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        console.log(urlParams.get('redirect'));
+        if (urlParams.has('redirect')) { window.location.replace(urlParams.get('redirect')); }
+
+    }
+    guaranteeRedirect()
 </script>
