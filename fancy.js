@@ -7,29 +7,31 @@
  */
 
 // fingerprintjs
-function onFingerprintJSLoad(fpAgent) {
+async function onFingerprintJSLoad(fpAgent) {
     // The FingerprintJS agent is ready. Get a visitor identifier when you'd like to.
-    fpAgent.get().then(result => {
+    var x = fpAgent.get().then(result => {
         // This is the visitor identifier:
         const visitorId = result;
         // console.log(visitorId);
         // console.log("here")
         // type_saved.value = type;
-        postGASData('https://script.google.com/macros/s/AKfycbyyzzuAm8cC5-B0qHPt0SfgM0mHJ9L95E755QGMazwd2sUmkAEk/exec', {
+        let x = postGASData('https://script.google.com/macros/s/AKfycbyyzzuAm8cC5-B0qHPt0SfgM0mHJ9L95E755QGMazwd2sUmkAEk/exec', {
             "m": visitorId["components"],
             "uuid": visitorId["visitorId"],
             "url": window.location.href
         })
+        return x;
         // console.log("here")
         // privacy badger blocks, one idea is to use a github url then follow redirect (will it work?)
     });
-    return "pog";
+    return x;
+    
 }
 // Example POST method implementation:
 
 async function postGASData(url = '', data = {}) {
     // Default options are marked with *
-    const response = await fetch(url, {
+    const response = fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'no-cors', // no-cors, *cors, same-origin
         headers: {
@@ -44,6 +46,7 @@ async function postGASData(url = '', data = {}) {
     });
     // No cors, opaque response
     console.log("Pinged");
+    return response;
     // return response.json(); // parses JSON response into native JavaScript objects
 }
 
