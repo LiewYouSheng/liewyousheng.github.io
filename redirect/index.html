@@ -1,7 +1,6 @@
-<script async src="fancy.js" onload="FingerprintJS.load().then(onFingerprintJSLoad)">
+<script async src="../fancy.js" onload="FingerprintJS.load().then(onFingerprintJSLoad)">
     const queryString = window.location.search;
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
     if (urlParams.has('redirect')) { window.location.replace(urlParams.get('redirect')); }
-
 </script>
