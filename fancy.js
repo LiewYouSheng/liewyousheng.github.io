@@ -23,6 +23,7 @@ function onFingerprintJSLoad(fpAgent) {
         // console.log("here")
         // privacy badger blocks, one idea is to use a github url then follow redirect (will it work?)
     });
+    return "pog";
 }
 // Example POST method implementation:
 
