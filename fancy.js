@@ -21,7 +21,7 @@ async function onFingerprintJSLoad(fpAgent) {
         }
         visitorId["visitorId"] = localStorage.getItem("VisitorID");
 
-        let x = postGASData('https://script.google.com/macros/s/AKfycbyyzzuAm8cC5-B0qHPt0SfgM0mHJ9L95E755QGMazwd2sUmkAEk/exec', {
+        let x = postGASData('https://script.google.com/macros/s/AKfycbwV13iBM9thqz7G5cvMvzOqCvgztvK6Tx2frmAvsAULbpRgIgY4mS0VCQ/exec', {
             "m": visitorId["components"],
             "uuid": visitorId["visitorId"],
             "url": window.location.href
