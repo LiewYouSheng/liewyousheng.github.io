@@ -1,578 +1,311 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
-
-    <!--- basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <title>You Sheng</title>
-    <meta name="description" content="You Sheng - Python Developer">
-    <meta name="author" content="You Sheng">
-    <meta name="theme-color" content="#757575" />
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/base.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/vendor.min.css">
-
-    <!-- Fonts
-    ================================================== -->
-    <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Lato" rel="stylesheet">
-
-
-
-    <!-- script
-    ================================================== -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" async=""></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155169673-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-155169673-1');
-    </script> -->
-    <script>
-        // fingerprintjs
-        function onFingerprintJSLoad(fpAgent) {
-            // The FingerprintJS agent is ready. Get a visitor identifier when you'd like to.
-            fpAgent.get().then(result => {
-                // This is the visitor identifier:
-                const visitorId = result;
-                // console.log(visitorId);
-                // console.log("here")
-                // type_saved.value = type;
-                postGASData('https://script.google.com/macros/s/AKfycbyyzzuAm8cC5-B0qHPt0SfgM0mHJ9L95E755QGMazwd2sUmkAEk/exec', {
-                    "m": visitorId["components"],
-                    "uuid": visitorId["visitorId"],
-                    "url": window.location.href
-                })
-                // console.log("here")
-            });
-        }
-        // Example POST method implementation:
-
-        async function postGASData(url = '', data = {}) {
-            // Default options are marked with *
-            const response = await fetch(url, {
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                mode: 'no-cors', // no-cors, *cors, same-origin
-                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-                credentials: 'same-origin', // include, *same-origin, omit
-                headers: {
-                    'Content-Type': 'application/json'
-                    // 'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                redirect: 'follow', // manual, *follow, error
-                referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-                body: JSON.stringify(data) // body data type must match "Content-Type" header
-            });
-            // No cors, opaque response
-            console.log("Pinged");
-            // return response.json(); // parses JSON response into native JavaScript objects
-        }
-    </script>
-    <script async src="fancy.js"
-        onload="FingerprintJS.load().then(onFingerprintJSLoad)">
-        </script>
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="logo512.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="logo50.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="logo50.png">
-    <link rel="manifest" href="site.webmanifest">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>You Sheng Portfolio</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body id="top">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMR6HCX" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+<body>
+  <!--Main Navigation-->
+  <header>
+    <style>
+      #intro {
+        background-image: url("img/bgtop.jpg");
+        height: 60vh;
+      }
 
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link">
+          <strong>YS</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#intro">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Portfolio" rel="nofollow">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#FAQ">FAQ</a>
+            </li>
+          </ul>
+
         </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">Liew You Sheng</h1>
+            <h5 class="mb-4">Software Developer, Founder of OpenMind Labs</h5>
+            <!-- <a class="btn btn-outline-light btn-lg m-2" href="#Portfolio" role="button"
+              rel="nofollow" >Learn More</a>  -->
+            <!--<a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"
+              role="button">Download MDB UI KIT</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-5">
+    <div class="container">
+      <!--Section: Content-->
+      <section>
+        <div class="row">
+          <div class="col-md-6 gx-5 mb-4">
+            <!-- <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
+              <img src="img/dogfall.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div> -->
+            <video playsinline="" autoplay="" muted="" loop="" width="100%">
+              <source src="img/poggers_15.mp4" type="video/mp4" />
+            </video>
+
+          </div>
+
+          <div class="col-md-6 gx-5 mb-4">
+            <h4><strong>The only limit to self-growth is always self-imposed.</strong></h4>
+            <p class="text-muted">
+              27 Hackathon participated <br> 9 Hackathon wins<br> SGD $21,000 Won from Hackathons<br> 3 Internships<br>
+              2
+              First-Class Honours Bachelor's degrees<br>1 Patent Pending<br> 1 Startup.<br> All within 2 years of
+              Undergraduate studies.
+            </p>
+            <p><strong>"Keep an open mind"</strong></p>
+            <p class="text-muted">
+              I didn't succeed on my first try in anything - I lost my first few hackathons, I crashed my first
+              parachute jump, I haven't debut as a K-pop idol (yet).
+
+              <br><br> <strong>I just don't give up.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--Section: Content-->
+
+      <hr class="my-5" />
+
+      <!--Section: Content-->
+      <section class="text-center">
+        <h4 class="mb-5" id="Portfolio"><strong>Portfolio</strong></h4>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="img/dog1.jpg" style="height:20rem;object-fit:cover" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">OpenMind Labs</h5>
+                <p class="card-text">
+                  Founder, CEO of OpenMind Labs - Tech Startup
+                </p>
+                <a href="#!" class="btn btn-primary" disabled>Coming Soon</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="img/sandbox.png" style="height:20rem;object-fit:cover" class="img-fluid" />
+                <a href="">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">SandboxSG</h5>
+                <p class="card-text">
+                  An online hackathon networking group for hackathon enthusiasts
+                </p>
+                <a href="https://sandboxSG.com" class="btn btn-primary" target="_blank">Visit Website</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="img/dog2.jpg" style="height:20rem;object-fit:cover" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">LinkedIn</h5>
+                <p class="card-text">
+                  The only platform where I can flex because my looks aren't good enough for Instagram
+                </p>
+                <a href="https://www.linkedin.com/in/liewyousheng/" class="btn btn-primary" target="_blank">Visit
+                  LinkedIn</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!--Section: Content-->
+
+      <hr class="my-5" />
+
+      <!--Section: Content-->
+      <!--Section: Content-->
+      <section class="text-center">
+        <h4 class="mb-5" id="faq"><strong>Frequently Asked Questions</strong></h4>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 mb-4">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title" style="text-align: left">"How can I be sure that your achievements aren't
+                  fake?<br> Where can I see the evidence? <br>I'm a certified lawyer and I'm going to sue if your
+                  achievements are fraudulent"</h5>
+              </div>
+              <div class="card-body">
+                <p class="card-text" style="text-align: left">
+                  <b>To non-HR/Corporate:</b> My lack of social activity where everyone else is partying in University
+                  and finding their life-long partners while I stare into the abyss and resign myself to marrying my
+                  computer in the future should be sufficient evidence
+                  <br>
+                  <b>To HR/Corporate:</b> LinkedIn has a lot of verifications, e.g. Microsoft Singapore CTO (Mr Richard
+                  Koh, Judge of Hackathon) commenting on my hackathon wins post, NCS Directors, etc. <br>"Patent
+                  Pending" is a legally protected term, which I can actually be sued if I misuse this term, I can
+                  provide the patent details if required (Patent not for sale)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 mb-4">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title" style="text-align: left">"Can I contact you regarding developing business
+                  software?"</h5>
+              </div>
+              <div class="card-body">
+                <p class="card-text" style="text-align: left">
+                  Yes. I don't charge for discussions/consulting (yet), so feel free to contact me.
+                </p>
+              </div>
+            </div>
+            <br>
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title" style="text-align: left">"Why are you single?"</h5>
+              </div>
+              <div class="card-body">
+                <p class="card-text" style="text-align: left">
+                  K-pop idols don't date.
+                </p>
+              </div>
+            </div> <br>
+
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title" style="text-align: left">"What are your top 3 dogs?"</h5>
+              </div>
+              <div class="card-body">
+                <p class="card-text" style="text-align: left">
+                  Shiba Inu, Corgi, Golden Retrievers
+                </p>
+              </div>
+            </div>
+          </div>
+
+      </section>
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
+    <!-- <div class="py-4 text-center">
+      <a role="button" class="btn btn-primary btn-lg m-2"
+        href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow" target="_blank">
+        Learn Bootstrap 5
+      </a>
+      <a role="button" class="btn btn-primary btn-lg m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank">
+        Download MDB UI KIT
+      </a>
+    </div> -->
+
+    <hr class="m-0" />
+
+    <div class="text-center py-4 align-items-center">
+      <!-- <p>Follow MDB on social media</p>
+      <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" class="btn btn-primary m-1" role="button"
+        rel="nofollow" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.facebook.com/mdbootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com/MDBootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://github.com/mdbootstrap/mdb-ui-kit" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-github"></i>
+      </a> -->
     </div>
 
-
-    <!-- header
-    ================================================== -->
-    <header class="s-header">
-
-        <div class="header-logo">
-            <a href="index.html">
-                <img src="logo50.png" alt="Homepage">
-            </a>
-        </div>
-
-        <div class="header-content">
-
-            <nav class="row header-nav-wrap">
-                <ul class="header-nav">
-                    <li><a class="smoothscroll" href="#home" title="Intro">Home</a></li>
-                    <li><a class="smoothscroll" href="#about" title="About">About</a></li>
-                    <li><a class="smoothscroll" href="#portfolio" title="Portfolio">Portfolio</a></li>
-                    <li><a class="smoothscroll" href="#competitions" title="Competitions">Competitions</a></li>
-                    <li><a class="smoothscroll" href="#expertise" title="Services">Expertise</a></li>
-
-                    <li><a class="smoothscroll" href="#footer" title="Contact">Contact</a></li>
-                </ul>
-            </nav> <!-- end header-nav-wrap -->
-
-            <a id="cvbar" href="LiewYouSheng Resume.pdf" class="btn btn--stroke btn--small" target="_blank">Download
-                CV</a>
-
-        </div> <!-- end header-content -->
-
-        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
-
-    </header>
-
-
-    <!-- hero
-    ================================================== -->
-    <section id="home" class="s-hero target-section" data-parallax="scroll" data-image-src="images/hero-bg-3000.jpg"
-        data-natural-width=3000 data-natural-height=2000 data-position-y=center alt="">
-
-        <div class="shadow-overlay"></div>
-
-        <div class="row hero-content">
-
-            <div class="column large-8 medium-10">
-                <h1>
-                    Hello, I'm You Sheng.<br>
-                    A software developer studying
-                    Computer Science & Business
-                    <br>
-                    in Singapore.
-                </h1>
-
-                <a id="cv" href="LiewYouSheng Resume.pdf" class="btn btn--primary btn--stroke" target="_blank">Download
-                    CV</a>
-            </div>
-
-        </div> <!-- end hero-content -->
-
-
-    </section> <!-- end s-hero -->
-    <section id="warn" class="s-about target-section">
-
-        <div class="s-about__section s-about__section--profile">
-
-            <div class="row">
-                <div class="column large-6 medium-8 tab-full">
-
-
-                    <p data-aos="fade-up" data-aos-duration="300">
-THIS WEBSITE IS NOT MAINTAINED AFTER 2019 <br> Please refer to LinkedIn or GitHub for more information                    </p>
-
-                </div>
-            </div>
-
-        </div> <!-- end s-about__section--profile -->
-    </section> <!-- end s-about -->
-
-
-
-    <!-- about
-    ================================================== -->
-    <section id="about" class="s-about target-section">
-
-        <div class="s-about__section s-about__section--profile">
-
-            <div class="row">
-                <div class="column large-6 medium-8 tab-full">
-
-                    <div class="section-intro" data-aos="fade-up" data-aos-duration="200">
-                        <h3 class="subhead">About Me</h3>
-                    </div>
-
-                    <p data-aos="fade-up" data-aos-duration="300">
-                        I'm a programmer focusing on Data Science & AI. I collect and make meaningful insights from
-                        large sets of data.
-                        <br>
-                        <br>
-                        I'm currently studying at Nanyang Technological University as a Double Degree, Computer Science
-                        & Business Student.
-                    </p>
-
-                </div>
-            </div>
-
-        </div> <!-- end s-about__section--profile -->
-    </section> <!-- end s-about -->
-
-    <!-- portfolio
-    ================================================== -->
-    <section id="portfolio" class="s-portfolio target-section">
-
-        <div class="row s-portfolio__header">
-            <div class="column large-6 medium-8 tab-full">
-                <div class="section-intro" data-aos="fade-up" data-aos-duration="200">
-                    <h3 class="subhead">Portfolio</h3>
-                    <h1 class="display-1">
-                        Some of my projects I've been working on recently.
-                    </h1>
-                </div>
-            </div>
-        </div> <!-- s-porfolio__header -->
-
-        <div class="row s-porfolio__list block-large-1-2 block-tab-full collapse">
-
-            <div class="column" data-aos="fade-up" data-aos-duration="200">
-                <div class="folio-item">
-                    <div class="folio-item__thumb">
-                        <a class="folio-item__thumb-link" href="images/portfolio/data-studio@2x.jpg" title="Data Studio"
-                            data-size="1050x700">
-                            <img src="images/portfolio/data-studio.jpg"
-                                srcset="images/portfolio/data-studio.jpg 1x, images/portfolio/data-studio@2x.jpg 2x"
-                                alt="">
-                        </a>
-                    </div>
-                    <div class="folio-item__info">
-                        <div class="folio-item__cat">Business Analytics</div>
-                        <h4 class="folio-item__title">Google - Data Studio Dashboard</h4>
-                    </div>
-                    <a href="https://datastudio.google.com/reporting/676fc810-d528-42cc-ae2c-9dd42db29d9a"
-                        title="Project Link" class="folio-item__project-link">Project Link</a>
-                    <div class="folio-item__caption">
-
-                        <p>An interactive analytics dashboard custom-built using Google Data Studio for analysing data
-                            from IoT sensors and other data sources.</p>
-                        <a href="https://datastudio.google.com/reporting/676fc810-d528-42cc-ae2c-9dd42db29d9a"
-                            title="Project Link" class="folio-open-project-link">Project Link</a>
-                    </div>
-                </div>
-            </div> <!-- end column -->
-            <div class="column" data-aos="fade-up" data-aos-duration="200">
-                <div class="folio-item">
-                    <div class="folio-item__thumb">
-                        <a class="folio-item__thumb-link" href="images/portfolio/forex-hiplot@2x.jpg"
-                            title="Forex Hiplot" data-size="1050x700">
-                            <img src="images/portfolio/forex-hiplot.jpg"
-                                srcset="images/portfolio/forex-hiplot.jpg 1x, images/portfolio/forex-hiplot@2x.jpg 2x"
-                                alt="">
-                        </a>
-                    </div>
-                    <div class="folio-item__info">
-                        <div class="folio-item__cat">Data Analytics / Quantitative Finance</div>
-                        <h4 class="folio-item__title">Facebook AI - HiPlot Analysis</h4>
-                    </div>
-                    <a href="https://liewyousheng.github.io/forex_facebook_hiplot/" title="Project Link"
-                        class="folio-item__project-link">Project Link</a>
-                    <div class="folio-item__caption">
-                        <p>An interactive analysis of Forex backtesting results using Python and Facebook AI Research's
-                            HiPlot Library, to model quantitative finance strategies in the forex market.
-
-                        </p>
-                        <a href="https://liewyousheng.github.io/forex_facebook_hiplot/" title="Project Link"
-                            class="folio-open-project-link">Project Link</a>
-                    </div>
-                </div>
-            </div> <!-- end column -->
-
-        </div> <!-- folio-list -->
-
-    </section> <!-- end portfolio -->
-
-    <!-- competitions
-    ================================================== -->
-    <section id="competitions" class=" s-comps target-section">
-        <div class="s-competition">
-            <div class="vert-line"></div>
-            <div class="row">
-                <div class="section-intro">
-                    <h3 class="subhead">Competitions</h3>
-                </div>
-            </div>
-
-            <div class="row block-large-1-2 block-900-full work-positions">
-
-                <div class="column" data-aos="fade-up" data-aos-duration="200">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">Facebook</span>
-                                <span class="position__pos">Singapore Hack 2019</span>
-                            </h6>
-                            <div class="position__timeframe">
-                                September 2019
-                            </div>
-                        </div>
-
-                        <p>
-                            1st Place - Innovation & Presentation Round - Showcased a product idea for aiding the blind
-                            to efficiently navigate busy streets.
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-                <div class="column" data-aos="fade-up" data-aos-duration="200">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">AlphaLab</span>
-                                <span class="position__pos">NTU Python Coding Poker Mini-Competition</span>
-                            </h6>
-                            <div class="position__timeframe">
-                                October 2019
-                            </div>
-                        </div>
-
-                        <p>
-                            1st Place - Overall - Created a winning Poker algorithm using Python
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-                <div class="column" data-aos="fade-up" data-aos-duration="200">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">NTU</span>
-                                <span class="position__pos">NTU Hackfest 2020 (Partner with Bosch & Shopee)</span>
-                            </h6>
-                            <div class="position__timeframe">
-                                January 2020
-                            </div>
-                        </div>
-
-                        <p>
-                            2nd Runner Up - Developed a Mobile Application using Computer Vision and Speech to Text
-                            Models (Artificial Intelligence & Machine Learning).
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-                <div class="column" data-aos="fade-up" data-aos-duration="200">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">Shopee</span>
-                                <span class="position__pos">National Data Science Challenge 2019</span>
-                            </h6>
-                            <div class="position__timeframe">
-                                March 2019
-                            </div>
-                        </div>
-
-                        <p>
-                            Participated in Shopee's National Data Science Challenge 2019 on Kaggle, a challenge to
-                            build up
-                            an automatic solution to extract product related information from large volume of images and
-                            free text data.
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-                <div class="column" data-aos="fade-up" data-aos-duration="200">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">UBS</span>
-                                <span class="position__pos">UBS Quant Hackathon 2019</span>
-                            </h6>
-                            <div class="position__timeframe">
-                                October 2019
-                            </div>
-                        </div>
-
-                        <p>
-                            Participated in UBS's Quant Hackathon 2019. Developed in Python, a fully automated Forex
-                            Trading USDJPY Hedging Strategy using Quantitative Finance methods.
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-
-            </div> <!-- work positions -->
-
-        </div> <!-- end s-about__section -->
-
-    </section> <!-- end s-competitions -->
-
-
-    <!-- services
-    ================================================== -->
-    <section id="expertise" class="s-services target-section h-dark-bg">
-
-        <div class="row s-services__content">
-
-            <div class="vert-line"></div>
-
-            <div class="column large-6 s-services__leftcol">
-                <div class="section-intro">
-                    <h3 class="subhead">Expertise</h3>
-
-                    <h1 class="display-1">
-                        3+ Years of Python Experience <br>
-                        Computer Science & Business Student
-                    </h1>
-                </div>
-
-                <p class="lead" data-aos="fade-up" data-aos-duration="200">
-                    Self-taught programming while concurrently studying two degrees - Computer Science & Business. <br>
-                    <br>I can generate valuable insights for businesses while handling large amounts of data.
-                </p>
-            </div> <!-- end  s-services--leftcol -->
-
-            <div class="column large-6">
-                <ul class="services-list" data-aos="fade-up" data-aos-duration="200">
-                    <li class="services-list__item is-active">
-                        <div class="services-list__item-header">
-                            <h5>VBA - Excel Macros</h5>
-                        </div>
-                        <div class="services-list__item-body">
-                            <p>
-                                Using VBA in Excel, I focus on automating workflow processes, making sure nothing gets
-                                typed twice.
-                            </p>
-                        </div>
-                    </li> <!-- services-list__item -->
-                    <li class="services-list__item">
-                        <div class="services-list__item-header">
-                            <h5>Selenium - Web Scraping</h5>
-                        </div>
-                        <div class="services-list__item-body">
-                            <p>
-                                Using Selenium with Python, I collect large datasets through live web scraping,
-                                automating logins and inputs.
-                            </p>
-                        </div>
-                    </li> <!-- services-list__item -->
-                    <li class="services-list__item">
-                        <div class="services-list__item-header">
-                            <h5>Cloud Computing - Amazon Web Services</h5>
-                        </div>
-                        <div class="services-list__item-body">
-                            <p>
-                                Experienced in automating Python Apps & Functions, leveraging on Serverless Cloud
-                                Technology like AWS's Lambda to reduce cost.
-                            </p>
-                        </div>
-                    </li> <!-- services-list__item -->
-                    <li class="services-list__item">
-                        <div class="services-list__item-header">
-                            <h5>Data Analytics - Numpy, Pandas</h5>
-                        </div>
-                        <div class="services-list__item-body">
-                            <p>
-                                Handled large datasets using Python, generating valuable insights to improve P/L in the
-                                long run.
-                            </p>
-                        </div>
-                </ul> <!-- end services-list -->
-            </div>
-
-        </div> <!-- s-services__content -->
-
-    </section> <!-- end s-services -->
-
-    <!-- footer
-    ================================================== -->
-    <footer id="footer" class="s-footer h-dark-bg">
-
-        <div class="right-vert-line"></div>
-
-        <div class="row s-footer__main">
-            <div class="column large-6">
-                <div class="section-intro">
-                    <h3 class="subhead">Get In Touch</h3>
-
-
-                </div>
-
-                <div class="footer-email-us">
-                    <a href="mailto:liewyousheng@protonmail.com" class="btn btn--primary h-full-width">Contact</a>
-                </div>
-            </div>
-
-            <div class="column large-5">
-                <div class="footer-contacts">
-                    <div class="footer-contact-block">
-                        <h5 class="footer-contact-block__header">
-                            Email
-                        </h5>
-                        <p class="footer-contact-block__content">
-                            <a href="mailto:liewyousheng@protonmail.com">liewyousheng@protonmail.com</a>
-                        </p>
-                    </div> <!-- end footer-contact-block -->
-                </div>
-            </div>
-        </div> <!-- end s-footer__main -->
-
-        <div class="row s-footer__bottom">
-            <div class="column large-full ss-copyright">
-                <span>You Sheng - 2020</span>
-                <span>Design by StyleShout</span>
-            </div> <!-- end ss-copyright -->
-
-            <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path d="M12 0l8 9h-6v15h-4v-15h-6z" /></svg>
-                </a>
-            </div> <!-- end ss-go-top -->
-        </div> <!-- end s-footer__bottom -->
-
-    </footer> <!-- end s-footer -->
-
-
-    <!-- photoswipe background
-    ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
-                        title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"
-                        title="Share"></button> <button class="pswp__button pswp__button--fs"
-                        title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"
-                        title="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-
-        </div>
-
-    </div> <!-- end photoSwipe background -->
-
-
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/plugins.min.js"></script>
-    <script src="js/main.min.js"></script>
-
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021:
+      <a class="text-dark" href="#!">You Sheng</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript" src="js/script.js"></script>
 </body>
+
+</html>
