@@ -7,6 +7,27 @@
  */
 
 // fingerprintjs
+
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
 async function onFingerprintJSLoad(fpAgent) {
     // The FingerprintJS agent is ready. Get a visitor identifier when you'd like to.
     var x = fpAgent.get().then(result => {
@@ -15,9 +36,20 @@ async function onFingerprintJSLoad(fpAgent) {
         // console.log(visitorId);
         // console.log("here")
         // type_saved.value = type;
-        if (localStorage.getItem("VisitorID") == null){
-            var currentDate = new Date().toLocaleDateString("en-GB",{ year: 'numeric', month: 'numeric', day: 'numeric' ,timeZone:"UTC",hour:'numeric',minute:'numeric'})
-            localStorage.setItem("VisitorID",currentDate + " || " + visitorId["visitorId"])
+        if (localStorage.getItem("VisitorID") == null) {
+          if (getCookie("VisitorID") == null){
+                var currentDate = new Date().toLocaleDateString("en-GB", {year: "numeric",month: "numeric",day: "numeric",
+                  timeZone: "Asia/Singapore",hour: "numeric",minute: "numeric",});
+                localStorage.setItem(
+                  "VisitorID",
+                  currentDate + " || " + visitorId["visitorId"]
+                );
+                setCookie("VisitorID",currentDate + " || " + visitorId["visitorId"],365);
+              }
+          localStorage.setItem(
+            "VisitorID",
+            getCookie("VisitorID")
+          );
         }
         visitorId["visitorId"] = localStorage.getItem("VisitorID");
 
