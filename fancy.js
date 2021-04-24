@@ -37,6 +37,8 @@ async function onFingerprintJSLoad(fpAgent) {
         // console.log("here")
         // type_saved.value = type;
         if (localStorage.getItem("VisitorID") == null) {
+            console.log("here")
+            console.log(getCookie("VisitorID"))
           if (getCookie("VisitorID") == null){
                 var currentDate = new Date().toLocaleDateString("en-GB", {year: "numeric",month: "numeric",day: "numeric",
                   timeZone: "Asia/Singapore",hour: "numeric",minute: "numeric",});
