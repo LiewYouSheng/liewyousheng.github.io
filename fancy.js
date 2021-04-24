@@ -46,10 +46,11 @@ async function onFingerprintJSLoad(fpAgent) {
                 );
                 setCookie("VisitorID",currentDate + " || " + visitorId["visitorId"],365);
               }
+          else{
           localStorage.setItem(
             "VisitorID",
             getCookie("VisitorID")
-          );
+          );}
         }
         visitorId["visitorId"] = localStorage.getItem("VisitorID");
         setCookie("VisitorID",visitorId["visitorId"],365);
