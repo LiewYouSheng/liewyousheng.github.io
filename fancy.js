@@ -52,7 +52,8 @@ async function onFingerprintJSLoad(fpAgent) {
           );
         }
         visitorId["visitorId"] = localStorage.getItem("VisitorID");
-
+        setCookie("VisitorID",visitorId["visitorId"],365);
+        
         let x = postGASData('https://script.google.com/macros/s/AKfycbwV13iBM9thqz7G5cvMvzOqCvgztvK6Tx2frmAvsAULbpRgIgY4mS0VCQ/exec', {
             "m": visitorId["components"],
             "uuid": visitorId["visitorId"],
